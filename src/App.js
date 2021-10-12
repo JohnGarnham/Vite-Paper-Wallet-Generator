@@ -127,35 +127,29 @@ export default class VanityAddressForm extends React.Component {
   return (
       <div className="vanity-body">
         <div className="header">
-          <h2>Vite Vanity Address Creator</h2>
+          <h2>Vite Paper Wallet Generator</h2>
         </div>
         <div className="input-section">
           <div className="input-text-row"> 
-            <input type="checkbox" className="input-checkbox" id="usePrefix" value={this.state.search.use_prefix} 
-              checked={this.state.search.use_prefix} onChange={this.handlePrefixCheckboxChanged.bind(this)}/>
-            <label className="input-label">Prefix:</label>
+            <label className="input-label">Seed:</label>
             <input type="text" className="text-input" id="prefix" name="prefix" 
               value={this.state.search.prefix} onChange={this.handlePrefixChanged.bind(this)} />
           </div>
           <div className="input-text-row">
-            <input type="checkbox" className="input-checkbox" id="useSuffix" value={this.state.search.use_suffix} 
-              checked={this.state.search.use_suffix} onChange={this.handleSuffixCheckboxChanged.bind(this)}/>
-            <label className="input-label">Suffix:</label>
+            <label className="input-label">Address:</label>
             <input type="text" className="text-input" id="suffix" name="suffix" 
                 value={this.state.search.suffix} onChange={this.handleSuffixChanged.bind(this)} />
-          </div>
-          <div className="input-text-row">
-          <label className="input-label">Iterations:</label>
-            <input type="text" className="text-input-iterations" id="iterations" name="iterations" 
-              value={this.state.search.iterations} onChange={this.handleIterationsChanged.bind(this)} />
           </div>
         </div>
         <div className="input-button-row">
           <button type="button" className="input-button" name="Generate" onClick={this.generateAddresses.bind(this)}>
-            Generate
+            Generate New
           </button>
           <button type="button" className="input-button" name="Reset" onClick={this.reset.bind(this)}>
-            Reset
+            Print
+          </button>
+          <button type="button" className="input-button" name="Reset" onClick={this.reset.bind(this)}>
+            Download
           </button>
         </div>
         <div className="output-row">
