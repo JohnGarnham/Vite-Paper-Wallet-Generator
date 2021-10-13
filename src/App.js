@@ -80,13 +80,19 @@ export default class PaperWalletGeneratorForm extends React.Component {
 
   // Print QR codes
   printQRCodes(event) {
-    var prtContent = document.getElementById("output-area");
-    var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
-    WinPrint.document.write(prtContent.innerHTML);
-    WinPrint.document.close();
-    WinPrint.focus();
-    WinPrint.print();
-    WinPrint.close();
+    // Grab output-area
+    var qrCodes = document.getElementById("output-area");
+    // Create a Print popup
+    var printWindow = window.open('', 'Print QR Code', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0');
+    printWindow.document.write('<html><head><title>Print QR Codes</title>');
+    printWindow.document.write('<link rel="stylesheet" type="text/css" href="./App.css"/>');
+    printWindow.document.write('</head><body >');
+    printWindow.document.write(qrCodes.innerHTML);
+    printWindow.document.write('</body></html>');
+   
+    printWindow.focus();
+    printWindow.print();
+  
   }
 
   render() {

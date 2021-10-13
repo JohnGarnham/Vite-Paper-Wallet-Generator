@@ -1,0 +1,115 @@
+.vanity-body {
+  color: rgb(143, 139, 167);
+  background-color: #1e109c;
+  height: 100vh;
+  width: 100vw;
+}
+
+.header {
+  color: rgb(129, 95, 95);
+  height: 50px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #b4b1d3;
+}
+
+.input-button-row {
+  width: 100vw;
+  height: 70px;
+  padding: 5px;
+}
+
+.input-button {
+  color: #b4b1d3;
+  background-color: #3d44a0;
+  float: left;
+  width: 30%;
+  height: 40px;
+  margin: 5px;
+}
+
+.input-section {
+  padding: 5px;
+}
+
+.input-label {
+  display: inline-block;
+  width: 85px;
+  color: #b4b1d3;
+  padding: 5px;
+}
+
+.input-text-row {
+  color: rgb(218, 195, 195);
+  width: 100vw;
+  height: 80%;
+  padding: 5px;
+  text-align: left;
+}
+
+.input-checkbox {
+  padding: 5px;
+}
+
+.text-input {
+  color: rgb(245, 223, 223);
+  background-color:  #414bce;
+  width: 32vw;
+  height: 25px;
+}
+
+.text-input-long {
+  color: rgb(245, 223, 223);
+  background-color:  #414bce;
+  width: 60vw;
+  height: 25px;
+}
+
+.output-area {
+  border-width:4px;
+  border-style:solid;
+  border-color:black;
+  background-color: rgb(179, 155, 123);
+  text-align: left;
+  width: 40vw;
+  padding: 5px;
+  margin: 5px;
+}
+
+.output-label-row {
+  height: 50px;
+}
+
+.seed-label {
+  color:rgb(212, 37, 37);
+  text-align: center;
+  font-size: 40px;
+  width: 85px;
+  padding: 5px;
+  margin-left: 15px;
+}
+
+.address-label {
+  color:rgb(212, 37, 37);
+  text-align: center;
+  font-size: 40px;
+  width: 85px;
+  padding: 5px;
+  margin-left: 180px;
+}
+
+.output-row {
+  height: 300px;
+  padding: 5px;
+}
+
+.qr-code {
+  width: 100px;
+  height: 300px;
+  padding: 5px;
+  margin: 10px; 
+}
