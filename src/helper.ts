@@ -1,5 +1,14 @@
 import {wallet} from '@vite/vitejs';
+import { Hex, Address } from '@vite/vitejs/distSrc/utils/type';
+
 var getRandomValues = require('get-random-values');
+
+export declare type AddressObj = {
+  originalAddress: Hex;
+  publicKey: Hex;
+  privateKey: Hex;
+  address: Address;
+}
 
 // Returns true if address matches our criteria
 function isMatch(address : string, use_prefix : boolean, prefix : string, use_suffix : boolean, suffix : string) {
@@ -31,6 +40,15 @@ export function generateRandomSeed() : string {
     // Generate randomized hex string for seed
     const seed = buf2hex(array.buffer);
     return seed;
+}
+
+// Generate a random seed
+export function generateAddressFromSeed(seed : string) : AddressObj {
+  // Generate an address
+  let index = 0;
+  var keyPair = wallet.deriveKeyPairByIndex(seed, index);
+  var address = wallet.createAddressByPrivateKey(keyPair.privateKey);
+  return address;
 }
 
 // Generate count Vite address and search for prefix or suffix 

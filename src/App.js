@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react' 
 
-import {generateRandomSeed} from './helper'
+import {generateRandomSeed, generateAddressFromSeed, AddressObj} from './helper'
 
 const DEFAULT_ITERATIONS = 1000;
 
@@ -49,7 +49,7 @@ export default class PaperWalletGeneratorForm extends React.Component {
     this.setState({ result: result });
   }
 
-  // Generate addresses
+  // Generate new random seed
   generateSeed(event) {
     const seed = generateRandomSeed();
     console.log("Seed is ", seed)
