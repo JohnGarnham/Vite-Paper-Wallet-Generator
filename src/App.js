@@ -10,11 +10,16 @@ export default class PaperWalletGeneratorForm extends React.Component {
   constructor(props) {
     super(props);
 
+    // Initialize values
+    const initSeed = generateRandomSeed();
+    const initAddress = generateAddressFromSeed(initSeed);
+
     // Define state
     this.state = {
-        seed: "",
-        address: ""
+        seed: initSeed,
+        address: initAddress.address
       };
+      
   }
 
   // Text in seed textfield modified
