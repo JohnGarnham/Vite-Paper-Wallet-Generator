@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react' 
 
-import {buf2hex} from './helper'
+import {generateRandomSeed} from './helper'
 
 const DEFAULT_ITERATIONS = 1000;
 
@@ -51,18 +51,12 @@ export default class PaperWalletGeneratorForm extends React.Component {
 
   // Generate addresses
   generateSeed(event) {
-    var getRandomValues = require('get-random-values');
-    event.preventDefault();
-    // Generate random 32 byte seed
-    var array = new Uint8Array(32);
-    getRandomValues(array);
-    // Generate randomized hex string for seed
-    const seed = buf2hex(array.buffer);
-    var output = "Placeholder";
+    const seed = generateRandomSeed();
+    console.log("Seed is ", seed)
     // Set the result of the search
-    var result = this.state.result;
-    result.output = output;
-    this.setState({ result: result });
+    var state = this.state;
+    state.seed = seed;
+    this.setState({ state : state });
   }
 
   render() {

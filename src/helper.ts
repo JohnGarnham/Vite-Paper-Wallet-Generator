@@ -23,6 +23,16 @@ function isMatch(address : string, use_prefix : boolean, prefix : string, use_su
   return true;
 }
 
+// Generate a random seed
+export function generateRandomSeed() : string {
+    // Generate random 32 byte seed
+    var array = new Uint8Array(32);
+    getRandomValues(array);
+    // Generate randomized hex string for seed
+    const seed = buf2hex(array.buffer);
+    return seed;
+}
+
 // Generate count Vite address and search for prefix or suffix 
 export function searchAddresses(use_prefix: boolean, prefix : string, use_suffix: 
   boolean, suffix : string, count : number) : string {

@@ -21,7 +21,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
     return to;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.isHexString = exports.searchAddresses = void 0;
+exports.isHexString = exports.searchAddresses = exports.generateRandomSeed = void 0;
 var vitejs_1 = require("@vite/vitejs");
 var getRandomValues = require('get-random-values');
 // Returns true if address matches our criteria
@@ -49,6 +49,16 @@ function isMatch(address, use_prefix, prefix, use_suffix, suffix) {
     // If you reached here, you've won! :)
     return true;
 }
+// Generate a random seed
+function generateRandomSeed() {
+    // Generate random 32 byte seed
+    var array = new Uint8Array(32);
+    getRandomValues(array);
+    // Generate randomized hex string for seed
+    var seed = buf2hex(array.buffer);
+    return seed;
+}
+exports.generateRandomSeed = generateRandomSeed;
 // Generate count Vite address and search for prefix or suffix 
 function searchAddresses(use_prefix, prefix, use_suffix, suffix, count) {
     // Construct output string from matching addresses
