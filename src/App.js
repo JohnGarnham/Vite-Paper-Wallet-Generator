@@ -24,8 +24,14 @@ export default class PaperWalletGeneratorForm extends React.Component {
 
   // Text in seed textfield modified
   handleSeedChanged(event) {
+    console.log("Seed changed");
+    // Grab seed
     var state= this.state;
-    state.seed  = event.target.value;
+    var seed  = event.target.value;
+    state.seed = seed;
+    // Generate address from seed
+    const initAddress = generateAddressFromSeed(seed);
+    state.address = initAddress.address;
     console.log(JSON.stringify(state));
     this.setState({ state: state });
   }
@@ -61,6 +67,9 @@ export default class PaperWalletGeneratorForm extends React.Component {
     // Set the result of the search
     var state = this.state;
     state.seed = seed;
+    // Generate address from seed
+    const initAddress = generateAddressFromSeed(seed);
+    state.address = initAddress.address;
     this.setState({ state : state });
   }
 
