@@ -17,29 +17,28 @@ export default class PaperWalletGeneratorForm extends React.Component {
     // Define state
     this.state = {
         seed: initSeed,
-        address: initAddress.address
+        address: initAddress.address,
+        publicKey: initAddress.publicKey,
+        privateKey: initAddress.privateKey
       };
       
   }
 
   // Text in seed textfield modified
-  handleSeedChanged(event) {
+  handleSeedChange(event) {
     // Grab seed
     var state= this.state;
     var seed  = event.target.value;
     state.seed = seed;
     // Generate address from seed
     const initAddress = generateAddressFromSeed(seed);
+    // Update state
     state.address = initAddress.address;
+    state.publicKey = initAddress.publicKey;
+    state.privateKey = initAddress.privateKey;
+    // Log state value for debug
     console.log(JSON.stringify(state));
-    this.setState({ state: state });
-  }
-
-  // Text in address textfield modified
-  handleAddressChanged(event) {
-    var state = this.state;
-    state.address  = event.target.value;
-    console.log(JSON.stringify(state));
+    // Update state
     this.setState({ state: state });
   }
 
@@ -68,7 +67,13 @@ export default class PaperWalletGeneratorForm extends React.Component {
     state.seed = seed;
     // Generate address from seed
     const initAddress = generateAddressFromSeed(seed);
+    // Update state
     state.address = initAddress.address;
+    state.publicKey = initAddress.publicKey;
+    state.privateKey = initAddress.privateKey;
+    // Log state value for debug
+    console.log(JSON.stringify(state));
+    // Update state
     this.setState({ state : state });
   }
 
@@ -82,12 +87,22 @@ export default class PaperWalletGeneratorForm extends React.Component {
           <div className="input-text-row"> 
             <label className="input-label">Seed:</label>
             <input type="text" className="text-input" id="seed" name="seed" 
-              value={this.state.seed} onChange={this.handleSeedChanged.bind(this)} />
+              value={this.state.seed} onChange={this.handleSeedChange.bind(this)} />
           </div>
           <div className="input-text-row">
             <label className="input-label">Address:</label>
             <input type="text" className="text-input" id="address" name="address" 
-                value={this.state.address} onChange={this.handleAddressChanged.bind(this)} readOnly />
+                value={this.state.address} readOnly />
+          </div>
+          <div className="input-text-row">
+            <label className="input-label">Public Key:</label>
+            <input type="text" className="text-input" id="publicKey" name="publicKey" 
+                value={this.state.publicKey} readOnly />
+          </div>
+          <div className="input-text-row">
+            <label className="input-label">Private Key:</label>
+            <input type="text" className="text-input-long" id="privateKey" name="privateKey" 
+                value={this.state.privateKey} readOnly />
           </div>
         </div>
         <div className="input-button-row">

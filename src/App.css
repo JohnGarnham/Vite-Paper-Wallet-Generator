@@ -38,7 +38,7 @@
 
 .input-label {
   display: inline-block;
-  width: 80px;
+  width: 85px;
   color: #b4b1d3;
   padding: 5px;
 }
@@ -59,6 +59,13 @@
   color: rgb(245, 223, 223);
   background-color:  #414bce;
   width: 32vw;
+  height: 25px;
+}
+
+.text-input-long {
+  color: rgb(245, 223, 223);
+  background-color:  #414bce;
+  width: 60vw;
   height: 25px;
 }
 
