@@ -7,6 +7,11 @@ const DEFAULT_ITERATIONS = 1000;
 
 export default class PaperWalletGeneratorForm extends React.Component {
 
+  componentDidMount() {
+    // Set title of page
+    document.title = "Vite Paper Wallet Generator"
+  }
+
   constructor(props) {
     super(props);
 
