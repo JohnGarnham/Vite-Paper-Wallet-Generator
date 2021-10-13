@@ -78,6 +78,17 @@ export default class PaperWalletGeneratorForm extends React.Component {
     this.setState({ state : state });
   }
 
+  // Print QR codes
+  printQRCodes(event) {
+    var prtContent = document.getElementById("output-area");
+    var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+    WinPrint.document.write(prtContent.innerHTML);
+    WinPrint.document.close();
+    WinPrint.focus();
+    WinPrint.print();
+    WinPrint.close();
+  }
+
   render() {
   return (
       <div className="vanity-body">
@@ -110,14 +121,14 @@ export default class PaperWalletGeneratorForm extends React.Component {
           <button type="button" className="input-button" name="Generate" onClick={this.generateSeed.bind(this)}>
             Generate New
           </button>
-          <button type="button" className="input-button" name="Print" onClick={this.reset.bind(this)}>
+          <button type="button" className="input-button" name="Print" onClick={this.printQRCodes.bind(this)}>
             Print
           </button>
           <button type="button" className="input-button" name="Download" onClick={this.reset.bind(this)}>
             Download
           </button>
         </div>
-        <div className="output-area">
+        <div className="output-area" id="output-area" name="output-area">
           <div className="output-label-row">
             <label className="seed-label">Seed:</label>
             <label className="address-label">Address:</label>
