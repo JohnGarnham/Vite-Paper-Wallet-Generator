@@ -1,5 +1,6 @@
 import './App.css';
-import React from 'react' 
+import React from 'react' ;
+import QRCode from "react-qr-code";
 
 import {generateRandomSeed, generateAddressFromSeed, AddressObj} from './helper'
 
@@ -117,7 +118,8 @@ export default class PaperWalletGeneratorForm extends React.Component {
           </button>
         </div>
         <div className="output-row">
-          <textarea className="textarea-output" id="output" name="output" readOnly />
+            Seed: <QRCode value="seed" />
+            Address: <QRCode value="address" />
         </div>
       </div>
     );
