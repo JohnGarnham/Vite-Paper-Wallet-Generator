@@ -70,25 +70,20 @@
 }
 
 .output-area {
-
-}
-
-.output-row {
-  width: 100vw;
-  height: 300px;
-  padding: 5px;
+  margin-left: 300px;
+  margin-right: 300px;
+  border-width:4px;
+  border-style:solid;
+  border-color:black;
   text-align: center;
 }
 
 .output-label-row {
-  width: 100vw;
   height: 50px;
-  padding: 5px;
   text-align: center;
 }
 
 .seed-label {
-  display: inline-block;
   text-align: center;
   font-size: 40px;
   width: 85px;
@@ -97,12 +92,17 @@
 }
 
 .address-label {
-  display: inline-block;
   text-align: center;
   font-size: 40px;
   width: 85px;
   padding: 5px;
   margin-right: 10px;
+}
+
+.output-row {
+  height: 300px;
+  padding: 5px;
+  text-align: center;
 }
 
 .qr-code {
