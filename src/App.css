@@ -70,57 +70,46 @@
 }
 
 .output-area {
-  margin-left: 300px;
-  margin-right: 300px;
   border-width:4px;
   border-style:solid;
   border-color:black;
-  text-align: center;
+  background-color: rgb(179, 155, 123);
+  text-align: left;
+  width: 40vw;
+  padding: 5px;
+  margin: 5px;
 }
 
 .output-label-row {
   height: 50px;
-  text-align: center;
 }
 
 .seed-label {
+  color:rgb(212, 37, 37);
   text-align: center;
   font-size: 40px;
   width: 85px;
   padding: 5px;
-  margin-right: 250px;
+  margin-left: 15px;
 }
 
 .address-label {
+  color:rgb(212, 37, 37);
   text-align: center;
   font-size: 40px;
   width: 85px;
   padding: 5px;
-  margin-right: 10px;
+  margin-left: 180px;
 }
 
 .output-row {
   height: 300px;
   padding: 5px;
-  text-align: center;
 }
 
 .qr-code {
   width: 100px;
   height: 300px;
   padding: 5px;
-  margin: 10px;
-  padding-left: 50px;
-  padding-right: 50px;
-  text-align: center;
+  margin: 10px; 
 }
-
-.seedLabel {
-  margin-right: 250px;
-}
-
-.addressLabel {
-  margin-right: 10px;
-}
-
-
