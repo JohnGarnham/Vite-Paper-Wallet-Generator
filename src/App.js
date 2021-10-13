@@ -1,69 +1,36 @@
 import './App.css';
 import React from 'react' 
-import {searchAddresses, isHexString} from './findVanityAddress'
+
+import {buf2hex} from './helper'
 
 const DEFAULT_ITERATIONS = 1000;
 
-export default class VanityAddressForm extends React.Component {
+export default class PaperWalletGeneratorForm extends React.Component {
 
   constructor(props) {
     super(props);
 
     // Define state
     this.state = {
-        // Search parameters
-        search: {      
-          prefix: '',
-          use_prefix: true,
-          suffix: '',
-          use_suffix: false,
-          iterations: DEFAULT_ITERATIONS
-        },
-        result: {
-          output: ''
-        }
+        seed: "",
+        address: ""
       };
   }
 
-  // Text in prefix textfield modified
-  handlePrefixChanged(event) {
-    var search = this.state.search;
-    search.prefix  = event.target.value;
-    console.log(JSON.stringify(search));
-    this.setState({ search: search });
+  // Text in seed textfield modified
+  handleSeedChanged(event) {
+    var state= this.state;
+    state.seed  = event.target.value;
+    console.log(JSON.stringify(state));
+    this.setState({ state: state });
   }
 
-  // Text in suffix textfield modified
-  handleSuffixChanged(event) {
-    var search = this.state.search;
-    search.suffix  = event.target.value;
-    console.log(JSON.stringify(search));
-    this.setState({ search: search });
-  }
-
-  // Text in iterations textfield modified
-  handleIterationsChanged(event) {
-    var search = this.state.search;
-    search.iterations  = event.target.value;
-    console.log(JSON.stringify(search));
-    this.setState({ search: search });
-  }
-
-  // Handle check box change
-  handlePrefixCheckboxChanged(event) {
-    var search = this.state.search;
-    // Toggle use_prefix value
-    search.use_prefix = ! search.use_prefix; 
-    console.log(JSON.stringify(search));
-    this.setState({ search: search });
-  }
-
-  handleSuffixCheckboxChanged(event) {
-    var search = this.state.search;
-    // Toggle use_suffix value
-    search.use_suffix = ! search.use_suffix; 
-    console.log(JSON.stringify(search));
-    this.setState({ search: search });
+  // Text in address textfield modified
+  handleAddressChanged(event) {
+    var state = this.state;
+    state.address  = event.target.value;
+    console.log(JSON.stringify(state));
+    this.setState({ state: state });
   }
 
   // Reset all values
@@ -83,40 +50,15 @@ export default class VanityAddressForm extends React.Component {
   }
 
   // Generate addresses
-  generateAddresses(event) {
-
+  generateSeed(event) {
+    var getRandomValues = require('get-random-values');
     event.preventDefault();
-    // Grab search state. Log for debug
-    var search = this.state.search;
-    console.log(JSON.stringify(search));
-
-    // Grab search parameters
-    let prefix = this.state.search.prefix;
-    let use_prefix = this.state.search.use_prefix;
-    let suffix = this.state.search.suffix;
-    let use_suffix = this.state.search.use_suffix;
-    let count = this.state.search.iterations;
-
-    // Make sure suffix is valid hex string
-    if(! isHexString(search.prefix)) {
-      alert("Prefix must be a hex string. Valid characters are 0-9 and A-F.");
-      return;
-    }
-    // Make sure suffix is valid hex string
-    if(! isHexString(search.suffix)) {
-      alert("Suffix must be a hex string. Valid characters are 0-9 and A-F.");
-      return;
-    }
-
-    // Call search addresses function
-    let output = searchAddresses(use_prefix,prefix,use_suffix,suffix,count);
-    // If empty string returned, no matches found
-    if(!output || output.length === 0) {
-      console.log("No addresses found after " + count + " iterations.");
-      output = "No addresses found";
-    } else {
-      console.log("Address found ", output);
-    }
+    // Generate random 32 byte seed
+    var array = new Uint8Array(32);
+    getRandomValues(array);
+    // Generate randomized hex string for seed
+    const seed = buf2hex(array.buffer);
+    var output = "Placeholder";
     // Set the result of the search
     var result = this.state.result;
     result.output = output;
@@ -132,29 +74,28 @@ export default class VanityAddressForm extends React.Component {
         <div className="input-section">
           <div className="input-text-row"> 
             <label className="input-label">Seed:</label>
-            <input type="text" className="text-input" id="prefix" name="prefix" 
-              value={this.state.search.prefix} onChange={this.handlePrefixChanged.bind(this)} />
+            <input type="text" className="text-input" id="seed" name="seed" 
+              value={this.state.seed} onChange={this.handleSeedChanged.bind(this)} />
           </div>
           <div className="input-text-row">
             <label className="input-label">Address:</label>
-            <input type="text" className="text-input" id="suffix" name="suffix" 
-                value={this.state.search.suffix} onChange={this.handleSuffixChanged.bind(this)} />
+            <input type="text" className="text-input" id="address" name="address" 
+                value={this.state.address} onChange={this.handleAddressChanged.bind(this)} />
           </div>
         </div>
         <div className="input-button-row">
-          <button type="button" className="input-button" name="Generate" onClick={this.generateAddresses.bind(this)}>
+          <button type="button" className="input-button" name="Generate" onClick={this.generateSeed.bind(this)}>
             Generate New
           </button>
-          <button type="button" className="input-button" name="Reset" onClick={this.reset.bind(this)}>
+          <button type="button" className="input-button" name="Print" onClick={this.reset.bind(this)}>
             Print
           </button>
-          <button type="button" className="input-button" name="Reset" onClick={this.reset.bind(this)}>
+          <button type="button" className="input-button" name="Download" onClick={this.reset.bind(this)}>
             Download
           </button>
         </div>
         <div className="output-row">
-          <textarea className="textarea-output" id="output" name="output" 
-            value={this.state.result.output} readOnly />
+          <textarea className="textarea-output" id="output" name="output" readOnly />
         </div>
       </div>
     );

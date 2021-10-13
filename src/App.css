@@ -58,14 +58,7 @@
 .text-input {
   color: rgb(245, 223, 223);
   background-color:  #414bce;
-  width: 20vw;
-  height: 25px;
-}
-
-.text-input-iterations {
-  color: rgb(245, 223, 223);
-  background-color:  #414bce;
-  width: 50px;
+  width: 40vw;
   height: 25px;
 }
 
