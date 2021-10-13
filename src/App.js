@@ -24,7 +24,6 @@ export default class PaperWalletGeneratorForm extends React.Component {
 
   // Text in seed textfield modified
   handleSeedChanged(event) {
-    console.log("Seed changed");
     // Grab seed
     var state= this.state;
     var seed  = event.target.value;
@@ -88,7 +87,7 @@ export default class PaperWalletGeneratorForm extends React.Component {
           <div className="input-text-row">
             <label className="input-label">Address:</label>
             <input type="text" className="text-input" id="address" name="address" 
-                value={this.state.address} onChange={this.handleAddressChanged.bind(this)} />
+                value={this.state.address} onChange={this.handleAddressChanged.bind(this)} readOnly />
           </div>
         </div>
         <div className="input-button-row">
