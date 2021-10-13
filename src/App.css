@@ -69,11 +69,58 @@
   height: 25px;
 }
 
+.output-area {
+
+}
+
 .output-row {
-  color: rgb(218, 195, 195);
   width: 100vw;
-  height: 400px;
+  height: 300px;
   padding: 5px;
+  text-align: center;
+}
+
+.output-label-row {
+  width: 100vw;
+  height: 50px;
+  padding: 5px;
+  text-align: center;
+}
+
+.seed-label {
+  display: inline-block;
+  text-align: center;
+  font-size: 40px;
+  width: 85px;
+  padding: 5px;
+  margin-right: 250px;
+}
+
+.address-label {
+  display: inline-block;
+  text-align: center;
+  font-size: 40px;
+  width: 85px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.qr-code {
+  width: 100px;
+  height: 300px;
+  padding: 5px;
+  margin: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+}
+
+.seedLabel {
+  margin-right: 250px;
+}
+
+.addressLabel {
+  margin-right: 10px;
 }
 
 

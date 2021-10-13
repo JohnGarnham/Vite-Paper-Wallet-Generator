@@ -117,13 +117,15 @@ export default class PaperWalletGeneratorForm extends React.Component {
             Download
           </button>
         </div>
-        <div className="output-row">
-       
-            Seed: <QRCode value={this.state.seed} />
-   
-
-            Address: <QRCode value={this.state.address} />
- 
+        <div className="output-area">
+          <div className="output-label-row">
+            <label className="seed-label">Seed:</label>
+            <label className="address-label">Address:</label>
+          </div>
+          <div className="output-row">
+            <QRCode value={this.state.seed} className="qr-code"/>
+            <QRCode value={this.state.address} className="qr-code"/>
+          </div>
         </div>
       </div>
     );
