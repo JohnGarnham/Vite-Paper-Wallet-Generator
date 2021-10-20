@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Vite-Paper-Wallet-Generator/static/css/main.fce77184.chunk.css",
-    "main.js": "/Vite-Paper-Wallet-Generator/static/js/main.09c40451.chunk.js",
-    "main.js.map": "/Vite-Paper-Wallet-Generator/static/js/main.09c40451.chunk.js.map",
+    "main.js": "/Vite-Paper-Wallet-Generator/static/js/main.109b0f07.chunk.js",
+    "main.js.map": "/Vite-Paper-Wallet-Generator/static/js/main.109b0f07.chunk.js.map",
     "runtime-main.js": "/Vite-Paper-Wallet-Generator/static/js/runtime-main.6dfd447f.js",
     "runtime-main.js.map": "/Vite-Paper-Wallet-Generator/static/js/runtime-main.6dfd447f.js.map",
     "static/js/2.773140e2.chunk.js": "/Vite-Paper-Wallet-Generator/static/js/2.773140e2.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.6dfd447f.js",
     "static/js/2.773140e2.chunk.js",
     "static/css/main.fce77184.chunk.css",
-    "static/js/main.09c40451.chunk.js"
+    "static/js/main.109b0f07.chunk.js"
   ]
 }
