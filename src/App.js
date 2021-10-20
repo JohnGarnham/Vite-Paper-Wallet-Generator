@@ -132,8 +132,8 @@ export default class PaperWalletGeneratorForm extends React.Component {
           <button type="button" className="input-button" name="Generate" onClick={this.generateSeed.bind(this)}>
             Generate New
           </button>
-          <button type="button" className="input-button" name="Print / Download" onClick={this.printQRCodes.bind(this)}>
-            Download
+          <button type="button" className="input-button" name="Download" onClick={this.printQRCodes.bind(this)}>
+            Print / Download
           </button>
         </div>
         <div className="output-area" id="output-area" name="output-area">
