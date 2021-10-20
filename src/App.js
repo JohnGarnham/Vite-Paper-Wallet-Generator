@@ -84,16 +84,19 @@ export default class PaperWalletGeneratorForm extends React.Component {
     var qrCodes = document.getElementById("output-area");
     // Create a Print popup
     var printWindow = window.open('', 'QR Code', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0');
-    printWindow.document.write('<html><head><title>Print QR Codes</title>');
+    printWindow.document.write('<html><head><title>QR Codes</title>');
     printWindow.document.write('<link rel="stylesheet" type="text/css" href="./App.css"/>');
     printWindow.document.write('</head><body >');
     printWindow.document.write(qrCodes.innerHTML);
     printWindow.document.write('</body></html>');
    
     printWindow.focus();
-    printWindow.onload = function() {
+    // Set timeout because print is showing before CSS renders
+    setTimeout(function(){
       printWindow.print();
-    };
+      printWindow.close();
+    }, 2000);
+  
   
   }
 
@@ -129,7 +132,7 @@ export default class PaperWalletGeneratorForm extends React.Component {
           <button type="button" className="input-button" name="Generate" onClick={this.generateSeed.bind(this)}>
             Generate New
           </button>
-          <button type="button" className="input-button" name="Print" onClick={this.printQRCodes.bind(this)}>
+          <button type="button" className="input-button" name="Print / Download" onClick={this.printQRCodes.bind(this)}>
             Download
           </button>
         </div>
