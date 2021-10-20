@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Vite-Vanity-Address-Generator/static/css/main.fce77184.chunk.css",
+    "main.js": "/Vite-Vanity-Address-Generator/static/js/main.97853c48.chunk.js",
+    "main.js.map": "/Vite-Vanity-Address-Generator/static/js/main.97853c48.chunk.js.map",
+    "runtime-main.js": "/Vite-Vanity-Address-Generator/static/js/runtime-main.6a3cd751.js",
+    "runtime-main.js.map": "/Vite-Vanity-Address-Generator/static/js/runtime-main.6a3cd751.js.map",
+    "static/js/2.773140e2.chunk.js": "/Vite-Vanity-Address-Generator/static/js/2.773140e2.chunk.js",
+    "static/js/2.773140e2.chunk.js.map": "/Vite-Vanity-Address-Generator/static/js/2.773140e2.chunk.js.map",
+    "static/js/3.80db02d5.chunk.js": "/Vite-Vanity-Address-Generator/static/js/3.80db02d5.chunk.js",
+    "static/js/3.80db02d5.chunk.js.map": "/Vite-Vanity-Address-Generator/static/js/3.80db02d5.chunk.js.map",
+    "index.html": "/Vite-Vanity-Address-Generator/index.html",
+    "static/css/main.fce77184.chunk.css.map": "/Vite-Vanity-Address-Generator/static/css/main.fce77184.chunk.css.map",
+    "static/js/2.773140e2.chunk.js.LICENSE.txt": "/Vite-Vanity-Address-Generator/static/js/2.773140e2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6a3cd751.js",
+    "static/js/2.773140e2.chunk.js",
+    "static/css/main.fce77184.chunk.css",
+    "static/js/main.97853c48.chunk.js"
+  ]
+}
