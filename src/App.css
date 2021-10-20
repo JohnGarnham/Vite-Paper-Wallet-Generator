@@ -1,4 +1,4 @@
-.vanity-body {
+.root {
   color: rgb(143, 139, 167);
   background-color: #1e109c;
   height: 100vh;
@@ -112,4 +112,9 @@
   height: 300px;
   padding: 5px;
   margin: 10px; 
+}
+
+.footer-link {
+  color:white;
+  padding: 5px;
 }

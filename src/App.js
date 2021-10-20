@@ -84,6 +84,7 @@ export default class PaperWalletGeneratorForm extends React.Component {
     var qrCodes = document.getElementById("output-area");
     // Create a Print popup
     var printWindow = window.open('', 'Print QR Code', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0');
+    printWindow.document.clear();
     printWindow.document.write('<html><head><title>Print QR Codes</title>');
     printWindow.document.write('<link rel="stylesheet" type="text/css" href="./App.css"/>');
     printWindow.document.write('</head><body >');
@@ -97,7 +98,7 @@ export default class PaperWalletGeneratorForm extends React.Component {
 
   render() {
   return (
-      <div className="vanity-body">
+      <div className="root">
         <div className="header">
           <h2>Vite Paper Wallet Generator</h2>
         </div>
@@ -144,6 +145,13 @@ export default class PaperWalletGeneratorForm extends React.Component {
             <QRCode value={this.state.address} className="qr-code"/>
           </div>
         </div>
+        <footer>
+          Email: <a className="footer-link" href="mailto:john.e.garnham@gmail.com">john.e.garnham@gmail.com</a> 
+          Twitter: <a className="footer-link"  href="https://twitter.com/ViNoDevErik">ViNoDevErik</a>
+          Source: <a className="footer-link"  href="https://github.com/JohnGarnham/Vite-Paper-Wallet-Generator">
+          https://github.com/JohnGarnham/Vite-Paper-Wallet-Generator
+            </a>
+        </footer>2
       </div>
     );
   }
