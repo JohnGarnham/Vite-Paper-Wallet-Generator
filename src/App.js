@@ -129,9 +129,6 @@ export default class PaperWalletGeneratorForm extends React.Component {
             Generate New
           </button>
           <button type="button" className="input-button" name="Print" onClick={this.printQRCodes.bind(this)}>
-            Print
-          </button>
-          <button type="button" className="input-button" name="Download" onClick={this.reset.bind(this)}>
             Download
           </button>
         </div>
@@ -151,7 +148,7 @@ export default class PaperWalletGeneratorForm extends React.Component {
           Source: <a className="footer-link"  href="https://github.com/JohnGarnham/Vite-Paper-Wallet-Generator">
           https://github.com/JohnGarnham/Vite-Paper-Wallet-Generator
             </a>
-        </footer>2
+        </footer>
       </div>
     );
   }
